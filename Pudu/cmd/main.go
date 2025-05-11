@@ -1,7 +1,6 @@
 package main
 
 import (
-	"Pudu/internal/handlers"
 	"log"
 	"net/http"
 )

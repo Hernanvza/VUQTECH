@@ -1,39 +1,20 @@
-package handlers
+package main
 
 import (
-	"Pudu/internal/utils"
-	"fmt"
+	"Pudu/internal/handlers"
 	"log"
 	"net/http"
 )
 
-// HandleLandingPage maneja la página principal
-func HandleLandingPage(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "./templates/index.html")
-}
+func main() {
+	// Definir las rutas
+	http.HandleFunc("/", handlers.HandleLandingPage)        // Página principal
+	http.HandleFunc("/contact", handlers.HandleContactForm) // Manejador del formulario de contacto
 
-// HandleContactForm maneja los envíos del formulario de contacto
-func HandleContactForm(w http.ResponseWriter, r *http.Request) {
-	if r.Method == http.MethodPost {
-		name := r.FormValue("name")
-		email := r.FormValue("email")
-		message := r.FormValue("message")
-
-		// Construir el cuerpo del correo
-		subject := "Nuevo mensaje de contacto"
-		body := fmt.Sprintf("Nombre: %s\nEmail: %s\nMensaje: %s", name, email, message)
-
-		// Enviar el correo
-		err := utils.SendEmail("tuemail@gmail.com", subject, body)
-		if err != nil {
-			log.Printf("Error al enviar el correo: %v", err)
-			http.Error(w, "No se pudo enviar el mensaje, inténtalo de nuevo más tarde.", http.StatusInternalServerError)
-			return
-		}
-
-		// Respuesta al usuario
-		fmt.Fprintf(w, "Gracias, %s. Hemos recibido tu mensaje.", name)
-		return
+	// Iniciar el servidor
+	log.Println("Servidor iniciado en http://localhost:8080")
+	err := http.ListenAndServe(":8080", nil)
+	if err != nil {
+		log.Fatalf("Error al iniciar el servidor: %v", err)
 	}
-	http.Error(w, "Método no permitido", http.StatusMethodNotAllowed)
 }
