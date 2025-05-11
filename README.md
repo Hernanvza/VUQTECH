@@ -1,7 +1,7 @@
-# Pudu - Tu Aliado en Tecnología
+# VUQTECH - Tu Aliado en Tecnología
 
 ## Descripción
-Pudu es una página web tecnológica que ofrece soluciones en desarrollo web, QA y automatización RPA. La plataforma está construida con tecnologías modernas para garantizar una experiencia fluida y óptima para los usuarios.
+VUQTECH es una página web tecnológica que ofrece soluciones en desarrollo web, QA y automatización RPA. La plataforma está construida con tecnologías modernas para garantizar una experiencia fluida y óptima para los usuarios.
 
 ---
 
@@ -83,5 +83,5 @@ Pudu es una página web tecnológica que ofrece soluciones en desarrollo web, QA
 Si tienes preguntas o quieres contribuir, contáctanos en nuestras redes sociales o envíanos un mensaje a través del formulario en la web.
 
 ---
-🚀 **Pudu - Innovación y Tecnología**
+🚀 **VUQTECH - Innovación y Tecnología**
 
